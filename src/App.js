@@ -32,11 +32,14 @@ function App() {
     eapIdentityError: '',
   });
 
-  const htmlDirection = useCallback((languageID) => {
-    languageID = languageID || i18n.language;
-    const rtl = Translations.filter((t) => t.id === languageID)[0]?.rtl;
-    return rtl ? 'rtl' : 'ltr';
-  }, [i18n.language]);
+  const htmlDirection = useCallback(
+    (languageID) => {
+      languageID = languageID || i18n.language;
+      const rtl = Translations.filter((t) => t.id === languageID)[0]?.rtl;
+      return rtl ? 'rtl' : 'ltr';
+    },
+    [i18n.language]
+  );
 
   const onChangeLanguage = (language) => {
     html.style.direction = htmlDirection(language);

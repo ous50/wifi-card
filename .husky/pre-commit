@@ -1,2 +1,2 @@
 # Format using prettier
-make fmt.write
+make fmt
